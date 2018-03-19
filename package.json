@@ -1,0 +1,22 @@
+{
+  "name": "loggerjs",
+  "version": "1.0.0",
+  "description": "console log in formal way for complex applications",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --reporter spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jishnu04/loggerJS.git"
+  },
+  "keywords": [
+    "logging"
+  ],
+  "author": "Jishnu <jishnutu1995@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Jishnu04/loggerJS/issues"
+  },
+  "homepage": "https://github.com/Jishnu04/loggerJS#readme"
+}

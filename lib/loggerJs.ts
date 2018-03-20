@@ -1,25 +1,25 @@
 
-
-exports.__esModule = true;
-var LoggerJS = /** @class */ (function () {
-    function LoggerJS(fieldScope) {
+export class LoggerJS {
+    fieldScope: string;
+    constructor(fieldScope?: string) {
         if (fieldScope == null)
-            this.fieldScope = '_default';
+            this.fieldScope = '_default'
         else
             this.fieldScope = fieldScope;
     }
-    LoggerJS.prototype.info = function (msg, data) {
-        var fnName = this.info.caller.name;
-        var time = new Date;
+    info(msg?: any, data?: any) {
+        let fnName = this.info.caller.name
+        let time = new Date;
         if (fnName == '')
-            fnName = "_global";
+            fnName = "_global"
+
         if (typeof msg == 'string') {
-            console.log("[INFO] [" + msg + "]");
+            console.log("[INFO] [" + msg + "]")
             console.log('[' + time.toISOString() + '] [' + this.fieldScope + ' : ' + fnName + ']');
             if (data != null)
                 console.log("[PAYLOAD] ", JSON.stringify(data));
-        }
-        else {
+
+        } else {
             console.log("[INFO] ");
             console.log('[' + time.toISOString() + '] [' + this.fieldScope + ' : ' + fnName + ']');
             if (data == null && msg != null)
@@ -27,20 +27,21 @@ var LoggerJS = /** @class */ (function () {
             if (data != null && msg == null)
                 console.log("[PAYLOAD] ", JSON.stringify(data));
         }
-        console.log("- - - - - - \n");
-    };
-    LoggerJS.prototype.error = function (msg, data) {
-        var fnName = this.info.caller.name;
-        var time = new Date;
+        console.log("- - - - - - \n")
+    }
+    error(msg: any, data: any) {
+        let fnName = this.info.caller.name
+        let time = new Date;
         if (fnName == '')
-            fnName = "_global";
+            fnName = "_global"
+
         if (typeof msg == 'string') {
-            console.log("[ERROR] [" + msg + "]");
+            console.log("[ERROR] [" + msg + "]")
             console.log('[' + time.toISOString() + '] [' + this.fieldScope + ' : ' + fnName + ']');
             if (data != null)
                 console.log("[PAYLOAD] ", JSON.stringify(data));
-        }
-        else {
+
+        } else {
             console.log("[ERROR] ");
             console.log('[' + time.toISOString() + '] [' + this.fieldScope + ' : ' + fnName + ']');
             if (data == null && msg != null)
@@ -48,20 +49,21 @@ var LoggerJS = /** @class */ (function () {
             if (data != null && msg == null)
                 console.log("[PAYLOAD] ", JSON.stringify(data));
         }
-        console.log("- - - - - - \n");
-    };
-    LoggerJS.prototype.debug = function (msg, data) {
-        var fnName = this.info.caller.name;
-        var time = new Date;
+        console.log("- - - - - - \n")
+    }
+    debug(msg: any, data: any) {
+        let fnName = this.info.caller.name
+        let time = new Date;
         if (fnName == '')
-            fnName = "_global";
+            fnName = "_global"
+
         if (typeof msg == 'string') {
-            console.log("[DEBUG] [" + msg + "]");
+            console.log("[DEBUG] [" + msg + "]")
             console.log('[' + time.toISOString() + '] [' + this.fieldScope + ' : ' + fnName + ']');
             if (data != null)
                 console.log("[PAYLOAD] ", JSON.stringify(data));
-        }
-        else {
+
+        } else {
             console.log("[DEBUG] ");
             console.log('[' + time.toISOString() + '] [' + this.fieldScope + ' : ' + fnName + ']');
             if (data == null && msg != null)
@@ -69,8 +71,6 @@ var LoggerJS = /** @class */ (function () {
             if (data != null && msg == null)
                 console.log("[PAYLOAD] ", JSON.stringify(data));
         }
-        console.log("- - - - - - \n");
-    };
-    return LoggerJS;
-}());
-exports.LoggerJS = LoggerJS;
+        console.log("- - - - - - \n")
+    }
+}

@@ -1,13 +1,29 @@
-'use strict';
 
 var expect = require('chai').expect;
 
-var log_ = require('../index').LoggerJS('index');
-
+var LoggerJS = require("../index");
 
 describe('#log_', function () {
-    it('should console info', function () {
-        expect(result).to.equal('1');
+    it('should console info witn no payload', function () {
+        var log_ = new LoggerJS.LoggerJS('index');
+        function sample() {
+            log_.info('My Message');
+        }
+        sample()
+    });
+    it('should console info with payload', function () {
+        var log_ = new LoggerJS.LoggerJS('index');
+        function sample() {
+            log_.info('My Message', { "test": "data" });
+        }
+        sample()
+    });
+    it('should console info with function name', function () {
+        var log_ = new LoggerJS.LoggerJS('index');
+        function sample() {
+            log_.info('My Message', { "test": "data" }, "myfunction");
+        }
+        sample()
     });
 
 });

@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "lib": [
+            "es5",
+            "dom",
+            "scripthost"
+        ],
+        "outDir": "dist",
+        "sourceMap": false,
+        "target": "es5",
+        "noImplicitUseStrict": true
+    },
+    "compileOnSave": true,
+    "include": [
+        "src"
+    ]
+}

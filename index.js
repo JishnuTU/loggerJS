@@ -1,6 +1,4 @@
-
-
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 var LoggerJS = /** @class */ (function () {
     function LoggerJS(fieldScope) {
         if (fieldScope == null)
@@ -8,8 +6,15 @@ var LoggerJS = /** @class */ (function () {
         else
             this.fieldScope = fieldScope;
     }
-    LoggerJS.prototype.info = function (msg, data) {
-        var fnName = this.info.caller.name;
+    LoggerJS.prototype.info = function (msg, data, fnName) {
+        if (fnName == null) {
+            try {
+                fnName = this.info.caller.name;
+            }
+            catch (e) {
+                fnName = " ";
+            }
+        }
         var time = new Date;
         if (fnName == '')
             fnName = "_global";
@@ -29,8 +34,15 @@ var LoggerJS = /** @class */ (function () {
         }
         console.log("- - - - - - \n");
     };
-    LoggerJS.prototype.error = function (msg, data) {
-        var fnName = this.info.caller.name;
+    LoggerJS.prototype.error = function (msg, data, fnName) {
+        if (fnName == null) {
+            try {
+                fnName = this.info.caller.name;
+            }
+            catch (e) {
+                fnName = " ";
+            }
+        }
         var time = new Date;
         if (fnName == '')
             fnName = "_global";
@@ -50,8 +62,15 @@ var LoggerJS = /** @class */ (function () {
         }
         console.log("- - - - - - \n");
     };
-    LoggerJS.prototype.debug = function (msg, data) {
-        var fnName = this.info.caller.name;
+    LoggerJS.prototype.debug = function (msg, data, fnName) {
+        if (fnName == null) {
+            try {
+                fnName = this.info.caller.name;
+            }
+            catch (e) {
+                fnName = " ";
+            }
+        }
         var time = new Date;
         if (fnName == '')
             fnName = "_global";

@@ -37,7 +37,7 @@ var LoggerJS = /** @class */ (function () {
     LoggerJS.prototype.error = function (msg, data, fnName) {
         if (fnName == null) {
             try {
-                fnName = this.info.caller.name;
+                fnName = this.error.caller.name;
             }
             catch (e) {
                 fnName = " ";
@@ -65,7 +65,7 @@ var LoggerJS = /** @class */ (function () {
     LoggerJS.prototype.debug = function (msg, data, fnName) {
         if (fnName == null) {
             try {
-                fnName = this.info.caller.name;
+                fnName = this.debug.caller.name;
             }
             catch (e) {
                 fnName = " ";

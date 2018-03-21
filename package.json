@@ -1,6 +1,6 @@
 {
   "name": "logger-simple",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "console log in formal way for complex applications",
   "main": "index.js",
   "scripts": {

@@ -40,7 +40,7 @@ export class LoggerJS {
     error(msg: any, data: any, fnName?: any) {
         if (fnName == null) {
             try {
-                fnName = this.info.caller.name;
+                fnName = this.error.caller.name;
             }
             catch (e) {
                 fnName = " ";
@@ -69,7 +69,7 @@ export class LoggerJS {
     debug(msg: any, data: any, fnName?: any) {
         if (fnName == null) {
             try {
-                fnName = this.info.caller.name;
+                fnName = this.debug.caller.name;
             }
             catch (e) {
                 fnName = " ";
